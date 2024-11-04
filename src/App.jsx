@@ -1,4 +1,3 @@
-
 import './App.css'
 import Food from './assets/Images/Food'
 import Home from './Components/Home'
