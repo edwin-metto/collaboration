@@ -11,7 +11,7 @@ function App() {
     <>
       <div>
       <h1 className='text-xl-font bold text-red-500'>collaborators</h1>
-      <h2>  Eugene maina </h2>
+      <h2>  Eugene maina kamau</h2>
       <Food/>
         
       </div>
