@@ -1,6 +1,6 @@
 
 import './App.css'
-import Food from './assets/Images/Food'
+
 import FoodOrder from './Payment/FoodOrder'
 
 function App() {
@@ -11,9 +11,9 @@ function App() {
       <div>
 
         <h1>collaborators</h1>
-        <h2>Maina kamau</h2>
+        <h2>Eugene maina</h2>
         <FoodOrder/>
-        <Food/>
+        
 
       </div>
 
