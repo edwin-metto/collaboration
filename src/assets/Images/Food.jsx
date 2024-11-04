@@ -1,15 +1,17 @@
 import React from 'react'
-
+import { images } from './Images';
 function Food() {
 
     const Food = [
       {
+        image: images.Salad1,
         name: 'Chicken pie',
         description: 'The best meal with some cheese',
         price: '$ 20',
         rating: '3'
       },
       {
+        image:images.Salad2,
         name: 'Aston Martin',
         description: 'DB12',
         price: '$ 12',
@@ -24,7 +26,7 @@ function Food() {
                 <ul>
                     {Food.map((meal, index) => (
                         <div key={index}>
-
+                            <li><img src={meal.image} alt="" /></li>
                             <li>Name: {meal.name}</li>
                             <li> {meal.description}</li>
                             <li> {meal.price}</li>
