@@ -5,9 +5,10 @@ import Food from './assets/Images/Food'
 function App() {
   return (
     <>
-    <div>
-      <Food/>
-    </div>
+      <div>
+
+        <Food />
+      </div>
     </>
   )
 }
