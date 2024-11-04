@@ -5,8 +5,7 @@ function App() {
     <>
       <div>
         <FoodOrder />
-
-
+        
       </div>
     </>
   )
