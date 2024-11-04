@@ -9,8 +9,8 @@ function App() {
 
   return (
     <>
-      <div>
-        <h1>collaborators</h1>
+      <div className='bg-green-500'>
+        <h1 className='bg-blue-500'>collaborators</h1>
         <h2>Eugene maina</h2>
         <FoodOrder/>
         <Food/>
