@@ -1,4 +1,3 @@
-
 import './App.css'
 import Food from './assets/Images/Food'
 
@@ -8,6 +7,7 @@ function App() {
       <div>
 
         <Food />
+
       </div>
     </>
   )
