@@ -1,16 +1,13 @@
 
 import './App.css'
+import Food from './assets/Images/Food'
 
 function App() {
-
-
   return (
     <>
-      <div>
-        <h2>My arrays</h2>
-        
-      </div>
-
+    <div>
+      <Food/>
+    </div>
     </>
   )
 }
