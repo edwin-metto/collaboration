@@ -12,10 +12,8 @@ function App() {
     <>
       <div>
         <Home/>
-        <FoodOrder/>
         <Food/>
-        
-
+        <FoodOrder/>
       </div>
 
     </>

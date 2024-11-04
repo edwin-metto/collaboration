@@ -5,15 +5,15 @@ function Food() {
     const Food = [
       {
         image: images.Salad1,
-        name: 'Chicken pie',
-        description: 'The best meal with some cheese',
+        name: 'Sausage Salad',
+        description: 'Well made Sausage Potato salad.',
         price: '$ 20',
         rating: '3'
-      },
+      }, 
       {
         image:images.Salad2,
-        name: 'Aston Martin',
-        description: 'DB12',
+        name: 'Chicken Salad',
+        description: 'Chipotle with chicken as Salad',
         price: '$ 12',
         rating: '3'
       },
@@ -50,20 +50,22 @@ function Food() {
   
     return (
         <div>
-            <h1 className='bg-red-500'>Food</h1>
             <div>
-                <ul>
+                <ul className='flex flex-wrap  text-black'>
                     {Food.map((meal, index) => (
-                        <div key={index}>
-                            <li><img src={meal.image} alt="" /></li>
-                            <li>Name: {meal.name}</li>
+                        <div key={index} className='rounded-2xl bg-gray-200 m-5 overflow-hidden text-center max-w-60 shadow-lg transition ease-out delay-160 hover:scale-110 '>
+                            <li><img src={meal.image} alt="" className='h-60 w-60 object-cover'/></li>
+                            <li className='text-[20px]'>{meal.name}</li>
                             <li> {meal.description}</li>
-                            <li> {meal.price}</li>
-                            <li>Rt {meal.rating} &#9733; </li>
+                            <p className='text-orange-500 text-[20px]'> {meal.price}</p>
+                            <li className='text-orange-500'>Rated, {meal.rating} &#9733; </li>
                         </div>
                     ))}
                 </ul>
 
+            </div>
+            <div>
+              <button >Place Order</button>
             </div>
         </div>
     )
