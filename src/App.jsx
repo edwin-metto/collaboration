@@ -10,7 +10,7 @@ function App() {
     <>
       <div>
       <h1>collaborators</h1>
-      <h2>Maina kamau </h2>
+      <h2>  Eugene maina </h2>
         
       </div>
     
