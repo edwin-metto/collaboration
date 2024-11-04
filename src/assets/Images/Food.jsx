@@ -16,7 +16,36 @@ function Food() {
         description: 'DB12',
         price: '$ 12',
         rating: '3'
+      },
+      {
+        image:images.Salad3,
+        name: 'Aston Martin',
+        description: 'DB12',
+        price: '$ 12',
+        rating: '3'
+      },
+      {
+        image:images.Salad4,
+        name: 'Aston Martin',
+        description: 'DB12',
+        price: '$ 12',
+        rating: '3'
+      },
+      {
+        image:images.Salad5,
+        name: 'Aston Martin',
+        description: 'DB12',
+        price: '$ 12',
+        rating: '3'
+      },
+      {
+        image:images.Salad6,
+        name: 'Aston Martin',
+        description: 'DB12',
+        price: '$ 12',
+        rating: '3'
       }
+
     ];
   
     return (
