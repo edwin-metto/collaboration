@@ -50,7 +50,7 @@ function Food() {
   
     return (
         <div>
-            <h1>Food</h1>
+            <h1 className='bg-red-500'>Food</h1>
             <div>
                 <ul>
                     {Food.map((meal, index) => (
