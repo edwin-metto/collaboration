@@ -11,8 +11,6 @@ function App() {
   return (
     <>
       <div>
-        <h1>collaborators</h1>
-        <h2>Eugene maina</h2>
         <Home/>
         <FoodOrder/>
         <Food/>
