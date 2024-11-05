@@ -1,7 +1,10 @@
-
 import './App.css'
 import Food from './assets/Images/Food'
+<<<<<<< HEAD
 import Login from './Components/Login'
+=======
+import Home from './Components/Home'
+>>>>>>> d28b0f466f66addaee0e62e2fdcd45418d1352ac
 
 import FoodOrder from './Payment/FoodOrder'
 
@@ -10,14 +13,16 @@ function App() {
 
   return (
     <>
-      <div className='bg-green-500'>
-        <h1 className='bg-blue-500'>collaborators</h1>
-        <h2>Eugene maina</h2>
-        <FoodOrder/>
+      <div>
+        <Home/>
         <Food/>
+<<<<<<< HEAD
         <Login/>
         
 
+=======
+        <FoodOrder/>
+>>>>>>> d28b0f466f66addaee0e62e2fdcd45418d1352ac
       </div>
 
     </>

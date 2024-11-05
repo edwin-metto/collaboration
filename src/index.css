@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -30,7 +28,7 @@ a:hover {
 
 body {
   margin: 0;
-
+  background: rgb(203, 203, 203);
   
 }
 
@@ -46,12 +44,16 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #fff2e6;
   cursor: pointer;
   transition: border-color 0.25s;
+  color: black;
+  margin: 20px;
+  border-color: black;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: orange;
+  color: orange;
 }
 button:focus,
 button:focus-visible {
