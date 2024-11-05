@@ -70,88 +70,88 @@ function Food() {
       },
       {
         image:images.Roll4,
-        name: 'Rolls',
-        description: 'DB12',
+        name: 'Beef Rolls',
+        description: 'Normal rolls plus beef, with no extra stuff',
         price:  12,
         rating: '3'
       },
       {
         image:images.Roll5,
-        name: 'Rolls',
-        description: 'DB12',
-        price: '$ 12',
-        rating: '3'
+        name: 'Pizza Rolls',
+        description: 'Made of cheese, pastrey, corrender and vegys',
+        price: 12,
+        rating: '5'
       },
       {
         image:images.Roll6,
-        name: 'Rolls',
-        description: 'DB12',
-        price: '$ 12',
-        rating: '3'
+        name: 'Food Rolls',
+        description: 'Nice Salad rolled in pastrey',
+        price: 17,
+        rating: '4'
       },
 
       {
         image:images.Dessert1,
-        name: 'Rolls',
-        description: 'DB12',
-        price: '$ 12',
+        name: 'Strawberry Dessert',
+        description: 'More of a Cheese cake but desert with strawberry flavor',
+        price: 10,
         rating: '3'
       },
       {
         image:images.Dessert2,
-        name: 'Rolls',
-        description: 'DB12',
-        price: '$ 12',
-        rating: '3'
+        name: 'Lemon Dessert',
+        description: 'Lemon Dessert baked with nice cream',
+        price: 6,
+        rating: '4'
       },
       {
         image:images.Dessert3,
-        name: 'Rolls',
-        description: 'DB12',
-        price: '$ 12',
+        name: 'Velvet Oreo Dessert Cake',
+        description: 'Velvet Oreo Dessert Cake best for both events and meals',
+        price: 17,
         rating: '3'
       },
       {
         image:images.Dessert4,
-        name: 'Rolls',
-        description: 'DB12',
-        price: '$ 12',
-        rating: '3'
+        name: 'Berry Dessert',
+        description: 'Dessert made with berry as cream',
+        price: 10,
+        rating: '5'
       },
       {
         image:images.Dessert5,
-        name: 'Rolls',
-        description: 'DB12',
-        price: '$ 12',
+        name: 'Strawberry Dessert Cake',
+        description: 'Mix of srawberry as desert',
+        price: 13,
         rating: '3'
       },
 
       {
         image:images.Cake1,
-        name: 'Rolls',
-        description: 'DB12',
-        price: '$ 12',
+        name: 'Event Cake',
+        description: 'Nice for birthday and party',
+        price: 22,
         rating: '3'
       },
       {
         image:images.Cake2,
-        name: 'Rolls',
-        description: 'DB12',
-        price: '$ 12',
+        name: 'Oreo Cake',
+        description: 'Black creamed oreo flavour cake, both topping and body',
+        price: 25,
         rating: '3'
       },
       {
         image:images.Cake3,
-        name: 'Rolls',
-        description: 'DB12',
-        price: '$ 12',
+        name: 'Pink Cake',
+        description: 'Strawberry flavoured pink colored cake',
+        price: 20,
         rating: '3'
       },
       {
         image:images.Cake4,
         name: 'Monster Cake',
-        description: 'DB12',
-        price: '$ 12',
+        description: 'Blue strawberry flavoured cake ',
+        price: 10,
         rating: '3'
       },
 
@@ -159,35 +159,35 @@ function Food() {
         image:images.Vegetables1,
         name: 'Vegetable Avocado',
         description: 'Vegetable with avocado',
-        price: '$ 12',
+        price: 12,
         rating: '4'
       },
       {
         image:images.Vegetables2,
         name: 'Vegetable Grilled',
         description: 'Vegetables well madi grilled',
-        price: '$ 17',
+        price: 17,
         rating: '3'
       },
       {
         image:images.Vegetables3,
         name: 'Fresh Vegys',
         description: 'More than just normal vegys',
-        price: '$ 10',
+        price: 10,
         rating: '4'
       },
       {
         image:images.Vegetables4,
         name: 'Salad Vegys',
         description: 'Salad made of full vegetable',
-        price: '$ 11',
+        price: 11,
         rating: '3'
       },
       {
         image:images.Vegetables5,
         name: 'Salata Vegy',
         description: 'Well made salata vegetables',
-        price: '$ 15',
+        price: 15,
         rating: '3'
       },
 
@@ -195,28 +195,28 @@ function Food() {
         image:images.Noodles1,
         name: 'Sober Noodles',
         description: 'More than just the avarange noodles',
-        price: '$ 9',
+        price: 9,
         rating: '5'
       },
       {
         image:images.Noodles2,
         name: 'Sauce Noodles',
         description: 'Noodles with sauce, tomato paste',
-        price: '$ 12',
+        price: 12,
         rating: '3'
       },
       {
         image:images.Noodles3,
         name: 'Ramen Noodles',
         description: 'Noodles made having ramen',
-        price: '$ 10',
+        price: 10,
         rating: '3'
       },
       {
         image:images.Noodles4,
         name: 'Pepper Noodles',
         description: 'Well made noodles with pepper',
-        price: '$ 15',
+        price: 15,
         rating: '4'
       }
       

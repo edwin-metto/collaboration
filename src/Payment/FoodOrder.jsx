@@ -31,9 +31,9 @@ function FoodOrder() {
   }, [quantities]);
 
   return (
-    <div>
+    <div className='p-4'>
       <h3 className="text-xl font-bold mb-4 text-orange-600 ">Food Order</h3>
-      <div className="grid gap-4 bg-gray-100">
+      <div className="grid gap-4 bg-gray-100  rounded-xl">
         {foodOptions.map((meal, index) => (
           <div key={index} className="border m-2 p-2 rounded flex items-center justify-between text-green-600 hover:bg-gray-300 ">
             <img src="" alt="Food Image" className="w-7 h-7" />
