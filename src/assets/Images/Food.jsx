@@ -21,52 +21,52 @@ function Food() {
       {
         image:images.Salad3,
         name: 'Tomato Salad',
-        description: 'DB12',
+        description: 'The only salad with tomato plus cucumber',
         price: '$ 12',
         rating: '3'
       },
       {
         image:images.Salad4,
         name: 'Chicken Salad',
-        description: 'DB12',
+        description: 'Well chopped chicken, corn and garlic Salad',
         price: '$ 12',
         rating: '3'
       },
       {
         image:images.Salad5,
         name: 'Mango Bliss Salad',
-        description: 'DB12',
+        description: 'Basic vegys, some fruit and beef',
         price: '$ 12',
         rating: '3'
       },
       {
         image:images.Salad6,
         name: 'Avocado Tuna Salad',
-        description: 'DB12',
+        description: 'Tuna minst meat and vegy salad',
         price: '$ 12',
-        rating: '3'
+        rating: '4'
       },
 
       {
         image:images.Roll1,
-        name: 'Rolls',
-        description: 'DB12',
-        price: '$ 12',
-        rating: '3'
+        name: 'Beef Rolls',
+        description: 'Duogh, and beef rolled up',
+        price: '$ 15',
+        rating: '5'
       },
       {
         image:images.Roll2,
-        name: 'Rolls',
-        description: 'DB12',
-        price: '$ 12',
-        rating: '3'
+        name: 'Chicken rolls',
+        description: 'Chicken rolled up in flatbread ',
+        price: '$ 16',
+        rating: '4'
       },
       {
         image:images.Roll3,
-        name: 'Rolls',
-        description: 'DB12',
-        price: '$ 12',
-        rating: '3'
+        name: 'Cheese Rolls',
+        description: 'Cheese meal in rolls of pastrey',
+        price: '$ 20',
+        rating: '5'
       },
       {
         image:images.Roll4,
