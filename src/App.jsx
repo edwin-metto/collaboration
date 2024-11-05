@@ -1,6 +1,7 @@
 
 import './App.css'
 import Food from './assets/Images/Food'
+import Login from './Components/Login'
 
 import FoodOrder from './Payment/FoodOrder'
 
@@ -14,6 +15,7 @@ function App() {
         <h2>Eugene maina</h2>
         <FoodOrder/>
         <Food/>
+        <Login/>
         
 
       </div>
