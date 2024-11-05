@@ -9,7 +9,6 @@ function Home() {
                 <div>
                     <button className='border-none'>Home</button>
                     <button className='border-none'>Menu</button>
-                    <button className='border-none'>SignIn</button>
                 </div>
             </div>
             <div>
