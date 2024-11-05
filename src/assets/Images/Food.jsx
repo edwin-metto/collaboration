@@ -20,28 +20,28 @@ function Food() {
       },
       {
         image:images.Salad3,
-        name: 'Aston Martin',
+        name: 'Tomato Salad',
         description: 'DB12',
         price: '$ 12',
         rating: '3'
       },
       {
         image:images.Salad4,
-        name: 'Aston Martin',
+        name: 'Chicken Salad',
         description: 'DB12',
         price: '$ 12',
         rating: '3'
       },
       {
         image:images.Salad5,
-        name: 'Aston Martin',
+        name: 'Mango Bliss Salad',
         description: 'DB12',
         price: '$ 12',
         rating: '3'
       },
       {
         image:images.Salad6,
-        name: 'Aston Martin',
+        name: 'Avocado Tuna Salad',
         description: 'DB12',
         price: '$ 12',
         rating: '3'
@@ -149,7 +149,7 @@ function Food() {
       },
       {
         image:images.Cake4,
-        name: 'Rolls',
+        name: 'Monster Cake',
         description: 'DB12',
         price: '$ 12',
         rating: '3'
@@ -157,67 +157,67 @@ function Food() {
 
       {
         image:images.Vegetables1,
-        name: 'Rolls',
-        description: 'DB12',
+        name: 'Vegetable Avocado',
+        description: 'Vegetable with avocado',
         price: '$ 12',
-        rating: '3'
+        rating: '4'
       },
       {
         image:images.Vegetables2,
-        name: 'Rolls',
-        description: 'DB12',
-        price: '$ 12',
+        name: 'Vegetable Grilled',
+        description: 'Vegetables well madi grilled',
+        price: '$ 17',
         rating: '3'
       },
       {
         image:images.Vegetables3,
-        name: 'Rolls',
-        description: 'DB12',
-        price: '$ 12',
-        rating: '3'
+        name: 'Fresh Vegys',
+        description: 'More than just normal vegys',
+        price: '$ 10',
+        rating: '4'
       },
       {
         image:images.Vegetables4,
-        name: 'Rolls',
-        description: 'DB12',
-        price: '$ 12',
+        name: 'Salad Vegys',
+        description: 'Salad made of full vegetable',
+        price: '$ 11',
         rating: '3'
       },
       {
         image:images.Vegetables5,
-        name: 'Rolls',
-        description: 'DB12',
-        price: '$ 12',
+        name: 'Salata Vegy',
+        description: 'Well made salata vegetables',
+        price: '$ 15',
         rating: '3'
       },
 
       {
         image:images.Noodles1,
-        name: 'Rolls',
-        description: 'DB12',
-        price: '$ 12',
-        rating: '3'
+        name: 'Sober Noodles',
+        description: 'More than just the avarange noodles',
+        price: '$ 9',
+        rating: '5'
       },
       {
         image:images.Noodles2,
-        name: 'Rolls',
-        description: 'DB12',
+        name: 'Sauce Noodles',
+        description: 'Noodles with sauce, tomato paste',
         price: '$ 12',
         rating: '3'
       },
       {
         image:images.Noodles3,
-        name: 'Rolls',
-        description: 'DB12',
-        price: '$ 12',
+        name: 'Ramen Noodles',
+        description: 'Noodles made having ramen',
+        price: '$ 10',
         rating: '3'
       },
       {
         image:images.Noodles4,
-        name: 'Rolls',
-        description: 'DB12',
-        price: '$ 12',
-        rating: '3'
+        name: 'Pepper Noodles',
+        description: 'Well made noodles with pepper',
+        price: '$ 15',
+        rating: '4'
       }
       
       
