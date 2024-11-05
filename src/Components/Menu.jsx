@@ -11,7 +11,6 @@ function Menu() {
                 <p className=''>Select a meal of choice from the choices below </p>
             </div>
             
-
             <div className='flex justify-between px-20 font-bold text-orange-600'>
                 <div className='hover:scale-110 hover:text-green-600 transition ease-out delay-150'>
                     <p>Cakes</p>

@@ -230,8 +230,8 @@ function Food() {
 
   return (
     <div>
-      <div  className='flex content-center w-full justify-center'>
-        <ul className='flex flex-wrap  text-black'>
+      <div  className=''>
+        <ul className='flex flex-wrap text-black justify-center'>
           {Food.map((meal, index) => (
             <div key={index} className='rounded-2xl bg-gray-200 m-5 overflow-hidden text-center max-w-60 shadow-lg transition ease-out delay-160 hover:scale-110 '
               onClick={() => {
