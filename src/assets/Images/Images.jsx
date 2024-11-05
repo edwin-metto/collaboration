@@ -34,6 +34,14 @@ import Noodles2 from        './Saucenoodles.jpg'
 import Noodles3 from        './Ramennoodles.jpg'
 import Noodles4 from        './Peppernoodles.jpg'
 
+
+import CakeLogo from './CakeLogo.jpg'
+import NoodleLogo from './NoodleLogo.jpg'
+import SaladLogo from './SalaoLogo.jpg'
+import VegyLogo from './VegyLogo.jpg'
+import DessertLogo from './DessertLogo.jpg'
+import RollsLogo from './RollsLogo.jpg'
+
 export const images = {
     Salad1,
     Salad2,
@@ -69,5 +77,12 @@ export const images = {
     Noodles1,
     Noodles2,
     Noodles3,
-    Noodles4
+    Noodles4,
+
+    CakeLogo,
+    RollsLogo,
+    NoodleLogo,
+    DessertLogo,
+    VegyLogo,
+    SaladLogo
 }
