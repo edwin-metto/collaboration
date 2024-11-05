@@ -8,21 +8,21 @@ function Food() {
         image: images.Salad1,
         name: 'Sausage Salad',
         description: 'Well made Sausage Potato salad.',
-        price: '$ 20',
-        rating: '3'
+        price: 20,
+        rating: 3
       }, 
       {
         image:images.Salad2,
         name: 'Chicken Salad',
         description: 'Chipotle with chicken as Salad',
-        price: '$ 12',
+        price: 12,
         rating: '3'
       },
       {
         image:images.Salad3,
         name: 'Tomato Salad',
         description: 'The only salad with tomato plus cucumber',
-        price: '$ 12',
+        price: 12,
         rating: '3'
       },
       {
@@ -36,14 +36,14 @@ function Food() {
         image:images.Salad5,
         name: 'Mango Bliss Salad',
         description: 'Basic vegys, some fruit and beef',
-        price: '$ 12',
+        price:  12,
         rating: '3'
       },
       {
         image:images.Salad6,
         name: 'Avocado Tuna Salad',
         description: 'Tuna minst meat and vegy salad',
-        price: '$ 12',
+        price:  12,
         rating: '4'
       },
 
@@ -51,28 +51,28 @@ function Food() {
         image:images.Roll1,
         name: 'Beef Rolls',
         description: 'Duogh, and beef rolled up',
-        price: '$ 15',
+        price: 15,
         rating: '5'
       },
       {
         image:images.Roll2,
         name: 'Chicken rolls',
         description: 'Chicken rolled up in flatbread ',
-        price: '$ 16',
+        price: 16,
         rating: '4'
       },
       {
         image:images.Roll3,
         name: 'Cheese Rolls',
         description: 'Cheese meal in rolls of pastrey',
-        price: '$ 20',
+        price: 20,
         rating: '5'
       },
       {
         image:images.Roll4,
         name: 'Rolls',
         description: 'DB12',
-        price: '$ 12',
+        price:  12,
         rating: '3'
       },
       {
@@ -236,7 +236,7 @@ function Food() {
                             <li><img src={meal.image} alt="" className='h-60 w-60 object-cover'/></li>
                             <li className='text-[20px]'>{meal.name}</li>
                             <li> {meal.description}</li>
-                            <p className='text-orange-500 text-[20px]'> {meal.price}</p>
+                            <p className='text-orange-500 text-[20px]'>$ {meal.price}</p>
                             <li className='text-orange-500'>Rated, {meal.rating} &#9733; </li>
                         </div>
                     ))}
