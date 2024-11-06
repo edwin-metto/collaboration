@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Food from '../assets/Images/Food';
+import Carts from '../Components/Carts';
 
 
 function FoodOrder({foodOptions}) {
@@ -46,6 +47,7 @@ function FoodOrder({foodOptions}) {
       </div>
       <h4 className="mt-4 text-lg font-bold text-green-500">Total Price: ${totalPrice}</h4>
       <button className="mt-4 p-2">Place Order</button>
+      <Carts/>
     </div>
   );
 }

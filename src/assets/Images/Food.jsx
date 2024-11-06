@@ -299,6 +299,7 @@ function Food() {
         {showOrder && (
           <FoodOrder foodOptions={Food.filter((_, index) => orderIndex.includes(index))} />
         )}
+        
       </div>
     </div>
   )
