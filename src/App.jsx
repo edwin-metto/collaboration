@@ -24,7 +24,6 @@ function App() {
       {user ? (
         <div>
           <Home />
-          <Food />
           <FoodOrder />
         </div>
       ) : (
