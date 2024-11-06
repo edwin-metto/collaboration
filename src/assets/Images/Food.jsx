@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { images } from './Images';
 import FoodOrder from '../../Payment/FoodOrder';
+import { Context } from '../../Components/Home';
+
 function Food() {
   const [orderIndex, setOrderIndex] = useState([]);
-  const [showOrder, setShowOrder] = useState(false);
+  const [showOrder, setShowOrder] = useContext(Context);
 
   const Food = [
 
@@ -261,7 +263,7 @@ function Food() {
   }
 
   const handlePlaceOrder = () => {
-    setShowOrder(!showOrder); // Show the FoodOrder component when button is clicked
+    setShowOrder(!showOrder); 
   };
 
   return (
@@ -289,7 +291,7 @@ function Food() {
           ))}
         </ul>
       </div>) :
-      ( <div><h1 className='font-bold text-[30px] text-green-500'>Your orders</h1></div> )}
+      ( <div><h1 className='font-bold text-[30px] text-orange-400 px-20'>Your orders</h1></div> )}
       </div>
       <div>
         <button onClick={handlePlaceOrder}>{!showOrder ? 'Place Order':'Return to home'}</button>

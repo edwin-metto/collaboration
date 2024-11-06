@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Food from '../assets/Images/Food';
 
 
-
 function FoodOrder({foodOptions}) {
   const [quantities, setQuantities] = useState(
     foodOptions.reduce((acc, food) => ({ ...acc, [food.name]: 1 }), {})
@@ -29,7 +28,6 @@ function FoodOrder({foodOptions}) {
 
   return (
     <div className='p-4'>
-      <h3 className="text-xl font-bold mb-4 text-orange-600 ">Food Order</h3>
       <div className="grid gap-4 bg-gray-100  rounded-xl">
         {foodOptions.map((meal, index) => (
           <div key={index} className="border m-2 p-2 rounded flex items-center justify-between text-green-600 hover:bg-gray-300 ">
@@ -46,7 +44,7 @@ function FoodOrder({foodOptions}) {
           </div>
         ))}
       </div>
-      <h4 className="mt-4 text-lg font-bold ">Total Price: ${totalPrice}</h4>
+      <h4 className="mt-4 text-lg font-bold text-green-500">Total Price: ${totalPrice}</h4>
       <button className="mt-4 p-2">Place Order</button>
     </div>
   );
