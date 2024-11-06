@@ -19,8 +19,7 @@ function Home() {
                 {menuOn === null && <Banner/>}
                 {menuOn === true && <Menu/>}
                 {menuOn === false && <Food />}
-                
-                
+                <button className='border-none absolute bottom-0' onClick={()=>setMenuOn(false)}>Visit our Home Page</button>
             </div>
         </div>
     )
