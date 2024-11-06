@@ -42,6 +42,8 @@ import VegyLogo from './VegyLogo.jpg'
 import DessertLogo from './DessertLogo.jpg'
 import RollsLogo from './RollsLogo.jpg'
 
+import Banner from './banner.jpg'
+
 export const images = {
     Salad1,
     Salad2,
@@ -84,5 +86,7 @@ export const images = {
     NoodleLogo,
     DessertLogo,
     VegyLogo,
-    SaladLogo
+    SaladLogo,
+
+    Banner
 }
