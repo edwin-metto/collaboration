@@ -8,19 +8,19 @@ function Login() {
   const [loginError, setLoginError] = useState('');
   const googleProvider = new GoogleAuthProvider();
 
-  
+
   const handleSignup = async (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
     try {
       await createUserWithEmailAndPassword(auth, email, password);
       console.log('Signup successful');
     } catch (error) {
       console.log(error);
-      setLoginError(error.message); 
+      setLoginError(error.message);
     }
   };
 
-  
+
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
@@ -28,47 +28,54 @@ function Login() {
       console.log("Logged in successfully");
     } catch (error) {
       console.log(error.code);
-      setLoginError(error.message); 
+      setLoginError(error.message);
     }
   };
 
-  
+
   const handleGoogleLogin = async () => {
     try {
       await signInWithPopup(auth, googleProvider);
       console.log("Google login successful");
     } catch (error) {
       console.log(error);
-      setLoginError(error.message); 
+      setLoginError(error.message);
     }
   };
 
   return (
-    <div>
-      <h1>Login</h1>
-      <form className='log' onSubmit={handleLogin}>
-        <input 
-          type='email' 
-          value={email} 
-          onChange={(e) => setEmail(e.target.value)} 
-          placeholder='Enter your email...' 
+    <div className='h-[900px]'>
+      <form className='log p-10 w-[500px] bg-gray-100 m-10 rounded-3xl mx-[30%] my-[20px]' onSubmit={handleLogin}>
+        
+      <h1 className='text-green-700 '>Registration form</h1>
+        <input
+          type='email'
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder='Enter your email...'
+          className='p-2 m-4 rounded-3xl w-full'
         />
-        <input 
-          type='password' 
-          value={password} 
-          onChange={(e) => setPassword(e.target.value)} 
-          placeholder='Enter your password...' 
+        <br />
+        <input
+          type='password'
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder='Enter your password...'
+          className='p-2 m-4 rounded-3xl w-full'
         />
-        <button type='submit'>Log in</button>
+        <br />
+        <button type='submit' className='w-full p-1 rounded-3xl '>Log in</button>
+        <br />
+
+        <button onClick={handleSignup} className='w-[30%] rounded-3xl'>Sign Up</button>
+        <button onClick={handleGoogleLogin} className='w-[50%]  rounded-3xl'>Continue with Google</button>
       </form>
 
-      <button onClick={handleSignup}>Sign Up</button>
-      <button onClick={handleGoogleLogin}>Continue with Google</button>
 
-    
       {loginError && <p>{loginError}</p>}
     </div>
   );
 }
+
 
 export default Login;
