@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import Menu from './Menu'
 import Food from '../assets/Images/Food'
+import Banner from '../assets/Images/Banner'
+
 
 function Home() {
     const [menuOn,setMenuOn] = useState(false)
@@ -14,6 +16,7 @@ function Home() {
                 </div>
             </div>
             <div>
+                <Banner/>   
                 {menuOn ? <Menu/> : <Food />}
                 
             </div>
