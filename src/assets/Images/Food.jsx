@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { images } from './Images';
+import FoodOrder from '../../Payment/FoodOrder';
 function Food() {
-  const [orderIndex, setOrderIndex] = useState([])
+  const [orderIndex, setOrderIndex] = useState([]);
+  const [showOrder, setShowOrder] = useState(false);
 
   const Food = [
 
@@ -76,7 +78,7 @@ function Food() {
       description: 'Cheese meal in rolls of pastrey',
       price: 20,
       rating: '5',
-       type: 'Rolls'
+      type: 'Rolls'
     },
     {
       image: images.Roll4,
@@ -84,7 +86,7 @@ function Food() {
       description: 'Normal rolls plus beef, with no extra stuff',
       price: 12,
       rating: '3',
-       type: 'Rolls'
+      type: 'Rolls'
     },
     {
       image: images.Roll5,
@@ -92,7 +94,7 @@ function Food() {
       description: 'Made of cheese, pastrey, corrender and vegys',
       price: 12,
       rating: '5',
-       type: 'Rolls'
+      type: 'Rolls'
     },
     {
       image: images.Roll6,
@@ -100,7 +102,7 @@ function Food() {
       description: 'Nice Salad rolled in pastrey',
       price: 17,
       rating: '4',
-       type: 'Rolls'
+      type: 'Rolls'
     },
 
     {
@@ -109,7 +111,7 @@ function Food() {
       description: 'More of a Cheese cake but desert with strawberry flavor',
       price: 10,
       rating: '3',
-       type: 'Dessert'
+      type: 'Dessert'
     },
     {
       image: images.Dessert2,
@@ -258,9 +260,15 @@ function Food() {
         : [...prevIndex, index]);
   }
 
+  const handlePlaceOrder = () => {
+    setShowOrder(!showOrder); // Show the FoodOrder component when button is clicked
+  };
+
   return (
     <div>
-      <div  className=''>
+      <div>
+        {!showOrder ? (
+      <div className=''>
         <ul className='flex flex-wrap text-black justify-center'>
           {Food.map((meal, index) => (
             <div key={index} className='rounded-2xl bg-gray-200 m-5 overflow-hidden text-center max-w-60 shadow-lg transition ease-out delay-160 hover:scale-110 '
@@ -280,9 +288,15 @@ function Food() {
             </div>
           ))}
         </ul>
+      </div>) :
+      ( <div><h1 className='font-bold text-[30px] text-green-500'>Your orders</h1></div> )}
       </div>
       <div>
-        <button >Place Order</button>
+        <button onClick={handlePlaceOrder}>{!showOrder ? 'Place Order':'Return to home'}</button>
+
+        {showOrder && (
+          <FoodOrder foodOptions={Food.filter((_, index) => orderIndex.includes(index))} />
+        )}
       </div>
     </div>
   )

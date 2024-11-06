@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import Food from '../assets/Images/Food';
 
-const foodOptions = [
-  { type: 'Pizza', price: 10 },
-  { type: 'Burger', price: 8 },
-  { type: 'Pasta', price: 12 },
-];
 
-function FoodOrder() {
+
+function FoodOrder({foodOptions}) {
   const [quantities, setQuantities] = useState(
-    foodOptions.reduce((acc, food) => ({ ...acc, [food.type]: 1 }), {})
+    foodOptions.reduce((acc, food) => ({ ...acc, [food.name]: 1 }), {})
   );
   const [totalPrice, setTotalPrice] = useState(
     foodOptions.reduce((acc, food) => acc + food.price, 0)
@@ -24,7 +21,7 @@ function FoodOrder() {
 
   useEffect(() => {
     const newTotal = foodOptions.reduce(
-      (acc, food) => acc + food.price * quantities[food.type],
+      (acc, food) => acc + food.price * quantities[food.name],
       0
     );
     setTotalPrice(newTotal);
@@ -36,16 +33,16 @@ function FoodOrder() {
       <div className="grid gap-4 bg-gray-100  rounded-xl">
         {foodOptions.map((meal, index) => (
           <div key={index} className="border m-2 p-2 rounded flex items-center justify-between text-green-600 hover:bg-gray-300 ">
-            <img src="" alt="Food Image" className="w-7 h-7" />
-            <p className="font-semibold">{meal.type}</p>
+            <img src={meal.image} alt="Food Image" className="w-10 h-10 object-cover rounded-full" />
+            <p className="font-semibold">{meal.name}</p>
             <input
               type="number"
               min="1"
-              value={quantities[meal.type]}
-              onChange={(e) => handleQuantityChange(e, meal.type)}
+              value={quantities[meal.name]}
+              onChange={(e) => handleQuantityChange(e, meal.name)}
               className="border p-1 text-center w-16"
             />
-            <p className="text-orange-600 text-[20px]">${meal.price * quantities[meal.type]}</p>
+            <p className="text-orange-600 text-[20px]">${meal.price * quantities[meal.name]}</p>
           </div>
         ))}
       </div>

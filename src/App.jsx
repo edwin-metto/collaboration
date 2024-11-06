@@ -1,8 +1,6 @@
 import './App.css';
-import Food from './assets/Images/Food';
 import Login from './Components/Login';
 import Home from './Components/Home';
-import FoodOrder from './Payment/FoodOrder';
 
 import { useState, useEffect } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
@@ -24,7 +22,6 @@ function App() {
       {user ? (
         <div>
           <Home />
-          <FoodOrder />
         </div>
       ) : (
         <Login />
