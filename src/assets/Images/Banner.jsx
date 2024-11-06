@@ -3,7 +3,7 @@ import { images } from './Images';
 
 const Banner = () => {
   return (
-    <div className="relative w-full h-64 bg-gray-800">
+    <div className="relative w-full h-72  md:h-[500px] bg-gray-800 rounded-3xl overflow-hidden">
       <img
         src={images.Banner} 
         alt="Delivery App Banner"
