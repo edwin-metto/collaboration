@@ -1,6 +1,7 @@
 import './App.css';
 import Login from './Components/Login';
 import Home from './Components/Home';
+import Location from './Payment/Location';
 
 import { useState, useEffect } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
@@ -26,6 +27,7 @@ function App() {
       ) : (
         <Login />
       )}
+      <Location />
     </div>
   );
 }
