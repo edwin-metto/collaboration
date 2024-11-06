@@ -17,6 +17,7 @@ function Carts() {
                     <br />
                     <button className=' w-[200px] p-1 border-none rounded-l bg-blue-500 hover:bg-blue-600 hover:text-white'>Pay</button>
                 </form>
+                
 
             </div>
         </div>
