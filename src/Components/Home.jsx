@@ -24,7 +24,7 @@ function Home() {
 
                 <div>
                     {menuOn === null && <Banner />}
-                    {menuOn === true ? (<div className='sticky top-0 z-99 bg-gray-200'><Menu /></div>) : ( <div></div> )}
+                    {menuOn === true ? (<div className='sticky top-0 z-99 bg-gray-200'><Menu /></div>) : ( <div><Food /></div> )}
                     <Food />
                     {menuOn === null ? (
                         <button className='border-none absolute bottom-0' onClick={() => setMenuOn(false)}>Visit our Home Page</button>) : ''}
