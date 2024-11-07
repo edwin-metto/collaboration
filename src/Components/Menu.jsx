@@ -16,25 +16,25 @@ function Menu() {
     }
     const scrollRolls = () => {
         window.scrollTo({
-            top: 500,
+            top: 900,
             behavior: 'smooth'
         })
     }
     const scrollDessert = () => {
         window.scrollTo({
-            top: 900,
+            top: 1300,
             behavior: 'smooth'
         })
     }
     const scrollNoodle = () => {
         window.scrollTo({
-            top: 2000,
+            top: 2500,
             behavior: 'smooth'
         })
     }
     const scrollVegy = () => {
         window.scrollTo({
-            top: 1700,
+            top: 2100,
             behavior: 'smooth'
         })
     }
