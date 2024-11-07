@@ -261,7 +261,7 @@ function Food() {
   }
 
   const handlePlaceOrder = () => {
-    setShowOrder(!showOrder); // Show the FoodOrder component when button is clicked
+    setShowOrder(!showOrder); 
   };
 
   return (
