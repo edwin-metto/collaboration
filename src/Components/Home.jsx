@@ -27,7 +27,7 @@ function Home() {
                     {!showOrder ? ( <div className='sticky top-0 z-99'>
                         
                     {menuOn === true ? (<div className=' bg-gray-200'><Menu /></div>) : ( <div><Food /></div> )}
-                    </div> ) : ''}
+                    </div> ) : ''} 
                     
                     {menuOn === null ? (
                         <button className='border-none absolute bottom-0' onClick={() => setMenuOn(false)}>Visit our Home Page</button>) : ''}
