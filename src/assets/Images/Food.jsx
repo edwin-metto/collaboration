@@ -291,7 +291,7 @@ function Food() {
           ))}
         </ul>
       </div>) :
-      ( <div><h1 className='font-bold text-[30px] text-orange-400 px-20'>Your orders</h1></div> )}
+      ( <div> </div> )}
       </div>
       <div>
         <button onClick={handlePlaceOrder}>{!showOrder ? 'Place Order':'Return to home'}</button>

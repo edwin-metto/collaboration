@@ -1,5 +1,5 @@
 import React from 'react'
-import Location from '../Payment/Location'
+
 
 function Carts() {
     return (
@@ -20,7 +20,6 @@ function Carts() {
                 </form>
 
             </div>
-            <Location/>
         </div>
     )
 }
