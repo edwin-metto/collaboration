@@ -1,4 +1,4 @@
-// App.jsx
+
 import './App.css';
 import Login from './Components/Login';
 import Home from './Components/Home';
@@ -6,6 +6,7 @@ import Home from './Components/Home';
 import { useState, useEffect } from 'react';
 import { onAuthStateChanged, sendEmailVerification } from 'firebase/auth';
 import { auth } from './firebase';
+import OrderHistory from './Payment/OrderHistory';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -50,6 +51,7 @@ function App() {
         )
       ) : (
         <Login />
+        
       )}
     </div>
   );
