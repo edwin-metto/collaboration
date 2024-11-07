@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import Food from '../assets/Images/Food';
+import { db, auth } from '../firebase'; 
+import { setDoc, doc, Timestamp } from 'firebase/firestore'; 
 import Carts from '../Components/Carts';
 
-
-function FoodOrder({foodOptions}) {
+function FoodOrder({ foodOptions }) {
   const [quantities, setQuantities] = useState(
     foodOptions.reduce((acc, food) => ({ ...acc, [food.name]: 1 }), {})
   );
@@ -27,6 +27,31 @@ function FoodOrder({foodOptions}) {
     setTotalPrice(newTotal);
   }, [quantities]);
 
+  const handleOrder = async () => {
+    const user = auth.currentUser;
+    if (user) {
+      const orderData = {
+        items: foodOptions.map((meal) => ({
+          name: meal.name,
+          quantity: quantities[meal.name],
+          price: meal.price,
+        })),
+        totalPrice,
+        date: Timestamp.now(),  
+        userId: user.uid,       
+      };
+
+      try {
+        
+        const orderRef = doc(db, 'users', user.uid, 'orders', new Date().toISOString());
+        await setDoc(orderRef, orderData);  
+        console.log('Order placed successfully!');
+      } catch (error) {
+        console.error('Error placing order: ', error);
+      }
+    }
+  };
+
   return (
     <div className='p-4'>
       <div className="grid gap-4 bg-gray-100  rounded-xl">
@@ -46,8 +71,8 @@ function FoodOrder({foodOptions}) {
         ))}
       </div>
       <h4 className="mt-4 text-lg font-bold text-green-500">Total Price: ${totalPrice}</h4>
-      <button className="mt-4 p-2">Place Order</button>
-      <Carts/>
+      <button onClick={handleOrder} className="mt-4 p-2 bg-green-500 text-white rounded-xl">Place Order</button>
+      <Carts />
     </div>
   );
 }
