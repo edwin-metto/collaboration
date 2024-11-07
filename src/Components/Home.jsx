@@ -25,8 +25,7 @@ function Home() {
                 <div>
                     {menuOn === null && <Banner />}
                     {!showOrder ? ( <div className='sticky top-0 z-99'>
-                        
-                    {menuOn === true ? (<div className=' bg-gray-200'><Menu /></div>) : ( <div><Food /></div> )}
+                    {menuOn === true ? (<div className=' bg-gray-200'><Menu /></div>) : ( <div></div> )}
                     </div> ) : ''}
                     <Food />
                     {menuOn === null ? (
