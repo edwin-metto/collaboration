@@ -18,7 +18,7 @@ function Login() {
       const user = userCredential.user;
       console.log('Signup successful');
       
-      // Send verification email
+      
       await sendEmailVerification(user);
       setSuccessMessage('Verification email sent! Please check your inbox.');
       setLoginError('');
@@ -29,14 +29,14 @@ function Login() {
     }
   };
 
-  // Handle user login
+  
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
 
-      // Check if the user's email is verified
+    
       if (!user.emailVerified) {
         setLoginError('Please verify your email address. Check your inbox for the verification email.');
         setSuccessMessage('');
@@ -50,7 +50,7 @@ function Login() {
     }
   };
 
-  // Handle Google login
+  
   const handleGoogleLogin = async () => {
     try {
       await signInWithPopup(auth, googleProvider);
@@ -85,18 +85,18 @@ function Login() {
         />
         <br />
 
-        {/* Login button */}
+        
         <button type='submit' className='w-full p-1 rounded-3xl '>Log in</button>
         <br />
 
-        {/* Signup button */}
+      
         <button onClick={handleSignup} className='w-[30%] rounded-3xl'>Sign Up</button>
         
-        {/* Google login button */}
+        
         <button onClick={handleGoogleLogin} className='w-[50%]  rounded-3xl'>Continue with Google</button>
       </form>
 
-      {/* Success or error messages */}
+      
       {loginError && <p style={{ color: 'red' }}>{loginError}</p>}
       {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
     </div>
