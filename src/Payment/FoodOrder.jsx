@@ -70,9 +70,9 @@ function FoodOrder({ foodOptions }) {
             {locationOn ? 'Back to order' : 'Place Order'}
           </button>
           <Location total={totalPrice} />
+          <Carts />
         </div>
       )}
-      <Carts />
     </div>
   );
 }

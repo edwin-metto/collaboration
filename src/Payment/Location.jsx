@@ -23,15 +23,15 @@ const Location = ({ total }) => {
         </form>
       </div>
 
-      <div style={{ width: '35%', textAlign: 'center' }} className='text-black'>
+      <div style={{ width: '35%', textAlign: 'center' }} className='text-black text-[20px]'>
         <h2>Cart Totals</h2>
         <table style={{ width: '100%', marginBottom: '20px' }}>
           <tbody>
-            <tr>
+            <tr className='text-blue-600'>
               <td>Subtotal</td>
               <td>${total}</td>
             </tr>
-            <tr>
+            <tr className='text-blue-600'>
               <td>Delivery Fee</td>
               <td>${deliveryFee}</td>
             </tr>
@@ -41,9 +41,6 @@ const Location = ({ total }) => {
             </tr>
           </tbody>
         </table>
-        <button className='w-[200px] p-1 border-none rounded-l bg-blue-500 hover:bg-blue-600 hover:text-white'>
-          Proceed To Payment
-        </button>
       </div>
     </div>
   );
