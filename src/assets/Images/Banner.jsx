@@ -12,7 +12,7 @@ const Banner = () => {
       <div className="absolute inset-0 flex flex-wrap items-center justify-center">
         <div>
           <h1 className="text-4xl text-white font-bold">Fast and Reliable Delivery</h1>
-          <p className='text-[25px] bg-gray-900 bg-opacity-50 p-3'>Welcome to Pot-Store ,your ultimate destination for quick ,easy ,and delicious food delivery!</p>
+          <p className='text-[25px] bg-gray-900 bg-opacity-50 p-3 text-white'>Welcome to Pot-Store ,your ultimate destination for quick ,easy ,and delicious food delivery!</p>
 
         </div>
       </div>
