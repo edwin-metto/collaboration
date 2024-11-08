@@ -69,7 +69,7 @@ function AdminDashboard() {
 
                         </div>)}
                 </div>
-                <div>
+                <div className='py-10'>
                     {admined === null ? (<div><h2 className='text-red-500 text-[30px]'>Wrong Admin Details</h2></div>) : ''}
                 </div>
             </div>
