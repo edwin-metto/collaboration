@@ -9,7 +9,7 @@ export const Context = React.createContext();
 function Home() {
     const [menuOn, setMenuOn] = useState(null);
     const [showOrder, setShowOrder] = useState(false);
-    const [admin, setAdmin] = useState(false)
+    const [admin, setAdmin] = useState(true)
     return (
         <Context.Provider value={[showOrder, setShowOrder]}>
             <div>
