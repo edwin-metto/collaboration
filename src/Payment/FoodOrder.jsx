@@ -31,7 +31,7 @@ function FoodOrder({ foodOptions }) {
   }, [quantities]);
 
   return (
-    <div className="p-4">
+    <div className="p-4  text-[20px]">
       {!locationOn ? (
         <div className="grid gap-4 bg-gray-100 rounded-xl">
           {foodOptions.map((meal, index) => (
@@ -50,7 +50,7 @@ function FoodOrder({ foodOptions }) {
                 min="1"
                 value={quantities[meal.name]}
                 onChange={(e) => handleQuantityChange(e, meal.name)}
-                className="border p-1 text-center w-16"
+                className=" text-[20px] border p-1 text-center w-16 bg-white rounded-lg text-orange-600 font-bold"
               />
               <p className="text-orange-600 text-[20px]">
                 ${meal.price * quantities[meal.name]}
