@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Food from '../assets/Images/Food';
-import Carts from '../Components/Carts';
 import Location from './Location';
 
 function FoodOrder({ foodOptions }) {
@@ -70,7 +69,6 @@ function FoodOrder({ foodOptions }) {
             {locationOn ? 'Back to order' : 'Place Order'}
           </button>
           <Location total={totalPrice} />
-          <Carts />
         </div>
       )}
     </div>

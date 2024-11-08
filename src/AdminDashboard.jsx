@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 
 function AdminDashboard() {
-    const [admined, setAdmined] = useState(true);
+    const [admined, setAdmined] = useState(false);
 
     const AdminName = 'Edwin Metto';
     const AdminEmail = 'edwin@gmail.com';
@@ -32,6 +32,14 @@ function AdminDashboard() {
     return (
         <div>
             <div className='text-black m-10'>
+                <div>
+                    {admined ? (
+                        <div>
+                            <h1>Admin dashboard</h1>
+                            <div>
+                                <div>Order Page</div>
+                            </div>
+                        </div>) : (
                 <div className='bg-gray-100 flex  justify-center p-5 rounded-xl'>
                     <form action="" className=''>
                         <h2 className='font-bold m-2 text-[18px]'>Enter your admin details</h2>
@@ -57,15 +65,7 @@ function AdminDashboard() {
                         <button className=' w-[200px] p-1 border-none rounded-l bg-blue-500 hover:bg-blue-600 hover:text-white' onClick={checkAdmin}>Login</button>
                     </form>
 
-                </div>
-                <div>
-                    {admined ? (
-                        <div>
-                            <h1>Admin dashboard</h1>
-                            <div>
-                                <div>Order Page</div>
-                            </div>
-                        </div>) : ''}
+                </div>)}
                 </div>
             </div>
 
