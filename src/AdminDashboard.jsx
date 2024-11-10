@@ -1,79 +1,161 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { db, auth } from './firebase';
+import { collection, getDocs, updateDoc, doc, query, where } from 'firebase/firestore';
+import { getUsers } from './firebase'; 
 
 function AdminDashboard() {
     const [admined, setAdmined] = useState(false);
+    const [orders, setOrders] = useState([]);
+    const [users, setUsers] = useState([]); 
+    const [adminCredentials, setAdminCredentials] = useState({
+        name: '',
+        email: '',
+        pass: ''
+    });
 
     const AdminName = 'Edwin Metto';
     const AdminEmail = 'edwin@gmail.com';
     const AdminPass = 'potstore254';
 
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [pass, setPass] = useState('');
-
+    
     const checkAdmin = (e) => {
         e.preventDefault();
+        const { name, email, pass } = adminCredentials;
         if (name === AdminName && email === AdminEmail && pass === AdminPass) {
-            setAdmined(true)
+            setAdmined(true);
+            fetchOrders();  
+            fetchUsers();   
         } else {
-            setAdmined(null)
+            setAdmined(null);
         }
-    }
+    };
 
-    const handleNameChange = (event) => {
-        setName(event.target.value)
-    }
-    const handleEmailChange = (event) => {
-        setEmail(event.target.value)
-    }
-    const handlePassChange = (event) => {
-        setPass(event.target.value)
-    }
+    
+    const fetchOrders = async () => {
+        const ordersSnapshot = await getDocs(collection(db, 'orders'));
+        const ordersList = ordersSnapshot.docs.map(doc => ({
+            ...doc.data(),
+            id: doc.id
+        }));
+        setOrders(ordersList);
+    };
+
+
+    const fetchUsers = async () => {
+        try {
+            const userList = await getUsers(); 
+            setUsers(userList);
+        } catch (error) {
+            console.error("Error fetching users: ", error);
+        }
+    };
+
+    
+    const updateOrderStatus = async (orderId, status) => {
+        const orderRef = doc(db, 'orders', orderId);
+        await updateDoc(orderRef, { status });
+        setOrders(orders.map(order => order.id === orderId ? { ...order, status } : order)); 
+    };
+
+    
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setAdminCredentials(prevState => ({ ...prevState, [name]: value }));
+    };
 
     return (
-        <div>
-            <div className='text-black m-10'>
-                <div>
-                    {admined ? (
+        <div className='text-black m-10'>
+            <div>
+                {admined ? (
+                    <div>
+                        <h1>Admin Dashboard</h1>
+
+                        
                         <div>
-                            <h1>Admin dashboard</h1>
-                            <div>
-                                <div>Order Page</div>
-                            </div>
-                        </div>) : (
-                        <div className='bg-gray-100 flex  justify-center p-5 rounded-xl'>
-                            <form action="" className=''>
-                                <h2 className='font-bold m-2 text-[18px]'>Enter your admin details</h2>
-                                <h2>Admin Name</h2>
-                                <input
-                                    value={name}
-                                    onChange={handleNameChange}
-                                    type="text"
-                                    placeholder='Admin Name'
-                                    className='p-1 text-center text-black bg-white rounded-2xl w-[300px] m-2'
-                                    required />
-                                <h2>Email</h2>
-                                <input
-                                    value={email}
-                                    onChange={handleEmailChange}
-                                    type="email" placeholder='Email' className='p-1 text-center text-black bg-white rounded-2xl w-[300px] m-2' required />
-                                <h2>Password</h2>
-                                <input
-                                    value={pass}
-                                    onChange={handlePassChange}
-                                    type="password" placeholder='Password' className='p-1 text-center text-black bg-white rounded-2xl w-[300px] m-2' required />
-                                <br />
-                                <button className=' w-[200px] p-1 border-none rounded-l bg-blue-500 hover:bg-blue-600 hover:text-white' onClick={checkAdmin}>Login</button>
-                            </form>
+                            <h2>Users</h2>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>User ID</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {users.map((user) => (
+                                        <tr key={user.uid}>
+                                            <td>{user.uid}</td>
+                                            <td>{user.displayName || 'N/A'}</td>
+                                            <td>{user.email}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
 
-                        </div>)}
-                </div>
-                <div className='py-10'>
-                    {admined === null ? (<div><h2 className='text-red-500 text-[30px]'>Wrong Admin Details</h2></div>) : ''}
-                </div>
+                        
+                        <div>
+                            <h2>Orders</h2>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>User ID</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {orders.map((order) => (
+                                        <tr key={order.id}>
+                                            <td>{order.id}</td>
+                                            <td>{order.userId}</td>
+                                            <td>{order.status}</td>
+                                            <td>
+                                                <button onClick={() => updateOrderStatus(order.id, 'preparing')}>Preparing</button>
+                                                <button onClick={() => updateOrderStatus(order.id, 'completed')}>Completed</button>
+                                                <button onClick={() => updateOrderStatus(order.id, 'canceled')}>Cancel</button>
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                ) : (
+                    <div className='bg-gray-100 flex justify-center p-5 rounded-xl'>
+                        <form>
+                            <h2 className='font-bold m-2 text-[18px]'>Enter your admin details</h2>
+                            <input
+                                name="name"
+                                value={adminCredentials.name}
+                                onChange={handleInputChange}
+                                type="text"
+                                placeholder="Admin Name"
+                                required
+                            />
+                            <input
+                                name="email"
+                                value={adminCredentials.email}
+                                onChange={handleInputChange}
+                                type="email"
+                                placeholder="Email"
+                                required
+                            />
+                            <input
+                                name="pass"
+                                value={adminCredentials.pass}
+                                onChange={handleInputChange}
+                                type="password"
+                                placeholder="Password"
+                                required
+                            />
+                            <button onClick={checkAdmin}>Login</button>
+                        </form>
+                    </div>
+                )}
             </div>
-
+            {admined === null && <div><h2 className='text-red-500 text-[30px]'>Wrong Admin Details</h2></div>}
         </div>
     );
 }
