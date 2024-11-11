@@ -73,8 +73,8 @@ function AdminDashboard() {
             <div className="max-w-4xl mx-auto p-5 bg-white shadow-xl rounded-xl">
                 {admined ? (
                     <div>
-                        <h1>Admin Dashboard</h1>
-                        <h1 className='text-black'> Orders Made: {countFromLocalStorage}</h1>
+                        <h1 className='text-black text-[50px] p-4 font-bold'>Admin Dashboard</h1>
+                        <h1 className='text-black text-[30px] bg-slate-300'> Orders Made: {countFromLocalStorage}</h1>
                     </div>
                 ) : (
                     <div className="bg-gray-100 p-6 rounded-xl shadow-lg flex justify-center items-center">
