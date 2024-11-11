@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { images } from '../assets/Images/Images';
-import Carts from '../Components/Carts';
 
 function OrderHistory() {
     const [count, setCount] = useState(1);
