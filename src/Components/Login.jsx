@@ -1,10 +1,7 @@
 import { useState } from 'react';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, sendEmailVerification } from 'firebase/auth';
 import {auth} from '../Firebase';
-<<<<<<< HEAD
 
-=======
->>>>>>> befe61ce99257b4f6656a43e88204d16596ed917
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -53,7 +50,6 @@ function Login() {
       setLoginError(error.message);
     }
   };
-
   
   const handleGoogleLogin = async () => {
     try {
