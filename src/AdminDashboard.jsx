@@ -6,7 +6,8 @@ import { getUsers } from './firebase';
 function AdminDashboard() {
     const [admined, setAdmined] = useState(false);
     const [orders, setOrders] = useState([]);
-    const [users, setUsers] = useState([]); 
+    const [users, setUsers] = useState([]);
+
     const [adminCredentials, setAdminCredentials] = useState({
         name: '',
         email: '',
@@ -17,18 +18,36 @@ function AdminDashboard() {
     const AdminEmail = 'edwin@gmail.com';
     const AdminPass = 'potstore254';
 
+<<<<<<< HEAD
+=======
+    
+    const [countFromLocalStorage, setCountFromLocalStorage] = useState(0);
+    useEffect(() => {
+        const savedCount = localStorage.getItem('count');
+        if (savedCount) {
+            const count = parseInt(savedCount, 10);
+            setCountFromLocalStorage(count);
+        }
+    }, []);
+
+
+>>>>>>> fdba232540af211ed8815cc4b8b5939c95305962
     const checkAdmin = (e) => {
         e.preventDefault();
         const { name, email, pass } = adminCredentials;
         if (name === AdminName && email === AdminEmail && pass === AdminPass) {
             setAdmined(true);
-            fetchOrders();  
-            fetchUsers();   
+            fetchOrders();
+            fetchUsers();
         } else {
             setAdmined(null);
         }
     };
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fdba232540af211ed8815cc4b8b5939c95305962
     const fetchOrders = async () => {
         const ordersSnapshot = await getDocs(collection(db, 'orders'));
         const ordersList = ordersSnapshot.docs.map(doc => ({
@@ -40,19 +59,24 @@ function AdminDashboard() {
 
     const fetchUsers = async () => {
         try {
-            const userList = await getUsers(); 
+            const userList = await getUsers();
             setUsers(userList);
         } catch (error) {
             console.error("Error fetching users: ", error);
         }
     };
 
+<<<<<<< HEAD
     const updateOrderStatus = async (orderId, status) => {
         const orderRef = doc(db, 'orders', orderId);
         await updateDoc(orderRef, { status });
         setOrders(orders.map(order => order.id === orderId ? { ...order, status } : order)); 
     };
 
+=======
+
+
+>>>>>>> fdba232540af211ed8815cc4b8b5939c95305962
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setAdminCredentials(prevState => ({ ...prevState, [name]: value }));
@@ -63,6 +87,7 @@ function AdminDashboard() {
             <div className="max-w-4xl mx-auto p-5 bg-white shadow-xl rounded-xl">
                 {admined ? (
                     <div>
+<<<<<<< HEAD
                         <h1 className="text-4xl font-bold text-center text-blue-600 mb-8">Admin Dashboard</h1>
 
                         
@@ -131,6 +156,10 @@ function AdminDashboard() {
                                 </tbody>
                             </table>
                         </div>
+=======
+                        <h1>Admin Dashboard</h1>
+                        <h1 className='text-black'> Orders Made: {countFromLocalStorage}</h1>
+>>>>>>> fdba232540af211ed8815cc4b8b5939c95305962
                     </div>
                 ) : (
                     <div className="bg-gray-100 p-6 rounded-xl shadow-lg flex justify-center items-center">
@@ -143,7 +172,11 @@ function AdminDashboard() {
                                     onChange={handleInputChange}
                                     type="text"
                                     placeholder="Admin Name"
+<<<<<<< HEAD
                                     className="w-full p-3 bg-black rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+=======
+                                    className="w-full p-3 bg-white rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+>>>>>>> fdba232540af211ed8815cc4b8b5939c95305962
                                     required
                                 />
                             </div>
@@ -154,7 +187,11 @@ function AdminDashboard() {
                                     onChange={handleInputChange}
                                     type="email"
                                     placeholder="Email"
+<<<<<<< HEAD
                                     className="w-full p-3 bg-black rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+=======
+                                    className="w-full p-3 bg-white rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+>>>>>>> fdba232540af211ed8815cc4b8b5939c95305962
                                     required
                                 />
                             </div>
@@ -165,7 +202,11 @@ function AdminDashboard() {
                                     onChange={handleInputChange}
                                     type="password"
                                     placeholder="Password"
+<<<<<<< HEAD
                                     className="w-full p-3 bg-black rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+=======
+                                    className="w-full p-3 bg-white rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+>>>>>>> fdba232540af211ed8815cc4b8b5939c95305962
                                     required
                                 />
                             </div>
