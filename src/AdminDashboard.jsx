@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { db, auth } from './firebase';
 import { collection, getDocs, updateDoc, doc, query, where } from 'firebase/firestore';
-import { getUsers } from './firebase'; 
+import { getUsers } from './firebase';
 
 function AdminDashboard() {
     const [admined, setAdmined] = useState(false);
@@ -18,7 +18,7 @@ function AdminDashboard() {
     const AdminEmail = 'edwin@gmail.com';
     const AdminPass = 'potstore254';
 
-    
+
     const [countFromLocalStorage, setCountFromLocalStorage] = useState(0);
     useEffect(() => {
         const savedCount = localStorage.getItem('count');
@@ -69,7 +69,7 @@ function AdminDashboard() {
     };
 
     return (
-        <div className="bg-gray-50 min-h-screen py-10 px-5">
+        <div className="bg-gray-50 min-h-screen py-10 px-5 text-black">
             <div className="max-w-4xl mx-auto p-5 bg-white shadow-xl rounded-xl">
                 {admined ? (
                     <div>
