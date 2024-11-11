@@ -154,7 +154,6 @@ function Carts() {
               </>
             )}
           </div>
-          <OrderHistory/>
         </div>
       )}
     </div>
