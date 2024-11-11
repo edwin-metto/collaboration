@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { images } from '../assets/Images/Images';
+import Carts from '../Components/Carts';
 
 function OrderHistory() {
     const [count, setCount] = useState(1);
@@ -20,9 +21,8 @@ function OrderHistory() {
         setOrderHistory([...orderHistory, newOrder]);
         setCount(count + 1);
     };
-
     return (
-        <div className='h-full m-10 text-slate-800 text-[20px]'>
+        <div className='h-full m-10 text-slate-800 text-[20px]' >
             <button onClick={handleAddOrder} className='px-4 py-2 bg-blue-500 text-white rounded'>
                 Add Order
             </button>
@@ -33,5 +33,6 @@ function OrderHistory() {
         </div>
     );
 }
+
 
 export default OrderHistory;

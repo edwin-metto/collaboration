@@ -51,7 +51,6 @@ function Login() {
       setLoginError(error.message);
     }
   };
-
   
   const handleGoogleLogin = async () => {
     try {
