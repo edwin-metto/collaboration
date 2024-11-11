@@ -28,6 +28,7 @@ function AdminDashboard() {
         }
     }, []);
 
+
     const checkAdmin = (e) => {
         e.preventDefault();
         const { name, email, pass } = adminCredentials;
@@ -50,6 +51,7 @@ function AdminDashboard() {
         setOrders(ordersList);
     };
 
+
     const fetchUsers = async () => {
         try {
             const userList = await getUsers();
@@ -58,11 +60,8 @@ function AdminDashboard() {
             console.error("Error fetching users: ", error);
         }
     };
-    const updateOrderStatus = async (orderId, status) => {
-        const orderRef = doc(db, 'orders', orderId);
-        await updateDoc(orderRef, { status });
-        setOrders(orders.map(order => order.id === orderId ? { ...order, status } : order)); 
-    };
+
+
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -74,74 +73,6 @@ function AdminDashboard() {
             <div className="max-w-4xl mx-auto p-5 bg-white shadow-xl rounded-xl">
                 {admined ? (
                     <div>
-                        <h1 className="text-4xl font-bold text-center text-blue-600 mb-8">Admin Dashboard</h1>
-
-                        
-                        <div className="mb-10">
-                            <h2 className="text-2xl font-semibold text-gray-800 mb-4">Users</h2>
-                            <table className="min-w-full table-auto">
-                                <thead className="bg-gray-200">
-                                    <tr>
-                                        <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">User ID</th>
-                                        <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Name</th>
-                                        <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Email</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {users.map((user) => (
-                                        <tr key={user.uid} className="border-t">
-                                            <td className="px-6 py-3 text-sm text-gray-700">{user.uid}</td>
-                                            <td className="px-6 py-3 text-sm text-gray-700">{user.displayName || 'N/A'}</td>
-                                            <td className="px-6 py-3 text-sm text-gray-700">{user.email}</td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
-
-                    
-                        <div>
-                            <h2 className="text-2xl font-semibold text-gray-800 mb-4">Orders</h2>
-                            <table className="min-w-full table-auto">
-                                <thead className="bg-gray-200">
-                                    <tr>
-                                        <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Order ID</th>
-                                        <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">User ID</th>
-                                        <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Status</th>
-                                        <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {orders.map((order) => (
-                                        <tr key={order.id} className="border-t">
-                                            <td className="px-6 py-3 text-sm text-gray-700">{order.id}</td>
-                                            <td className="px-6 py-3 text-sm text-gray-700">{order.userId}</td>
-                                            <td className="px-6 py-3 text-sm text-gray-700">{order.status}</td>
-                                            <td className="px-6 py-3 text-sm">
-                                                <button
-                                                    onClick={() => updateOrderStatus(order.id, 'preparing')}
-                                                    className="bg-yellow-400 hover:bg-yellow-500 text-white px-3 py-1 rounded-lg mr-2"
-                                                >
-                                                    Preparing
-                                                </button>
-                                                <button
-                                                    onClick={() => updateOrderStatus(order.id, 'completed')}
-                                                    className="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-lg mr-2"
-                                                >
-                                                    Completed
-                                                </button>
-                                                <button
-                                                    onClick={() => updateOrderStatus(order.id, 'canceled')}
-                                                    className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-lg"
-                                                >
-                                                    Cancel
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
                         <h1>Admin Dashboard</h1>
                         <h1 className='text-black'> Orders Made: {countFromLocalStorage}</h1>
                     </div>
