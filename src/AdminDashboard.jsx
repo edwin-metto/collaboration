@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { db, auth } from './firebase';
 import { collection, getDocs, updateDoc, doc, query, where } from 'firebase/firestore';
-import { getUsers } from './firebase'; 
+import { getUsers } from './firebase';
 
 function AdminDashboard() {
     const [admined, setAdmined] = useState(false);
     const [orders, setOrders] = useState([]);
-    const [users, setUsers] = useState([]); 
+    const [users, setUsers] = useState([]);
     const [adminCredentials, setAdminCredentials] = useState({
         name: '',
         email: '',
@@ -18,19 +18,29 @@ function AdminDashboard() {
     const AdminPass = 'potstore254';
 
     
+    const [countFromLocalStorage, setCountFromLocalStorage] = useState(0);
+    useEffect(() => {
+        const savedCount = localStorage.getItem('count');
+        if (savedCount) {
+            const count = parseInt(savedCount, 10);
+            setCountFromLocalStorage(count);
+        }
+    }, []);
+
+
     const checkAdmin = (e) => {
         e.preventDefault();
         const { name, email, pass } = adminCredentials;
         if (name === AdminName && email === AdminEmail && pass === AdminPass) {
             setAdmined(true);
-            fetchOrders();  
-            fetchUsers();   
+            fetchOrders();
+            fetchUsers();
         } else {
             setAdmined(null);
         }
     };
 
-    
+
     const fetchOrders = async () => {
         const ordersSnapshot = await getDocs(collection(db, 'orders'));
         const ordersList = ordersSnapshot.docs.map(doc => ({
@@ -43,21 +53,21 @@ function AdminDashboard() {
 
     const fetchUsers = async () => {
         try {
-            const userList = await getUsers(); 
+            const userList = await getUsers();
             setUsers(userList);
         } catch (error) {
             console.error("Error fetching users: ", error);
         }
     };
 
-    
+
     const updateOrderStatus = async (orderId, status) => {
         const orderRef = doc(db, 'orders', orderId);
         await updateDoc(orderRef, { status });
-        setOrders(orders.map(order => order.id === orderId ? { ...order, status } : order)); 
+        setOrders(orders.map(order => order.id === orderId ? { ...order, status } : order));
     };
 
-    
+
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setAdminCredentials(prevState => ({ ...prevState, [name]: value }));
@@ -70,7 +80,8 @@ function AdminDashboard() {
                     <div>
                         <h1>Admin Dashboard</h1>
 
-                        
+                        <div> Orders: {countFromLocalStorage} </div>
+
                         <div>
                             <h2>Users</h2>
                             <table>
@@ -93,7 +104,7 @@ function AdminDashboard() {
                             </table>
                         </div>
 
-                        
+
                         <div>
                             <h2>Orders</h2>
                             <table>
