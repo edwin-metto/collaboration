@@ -34,7 +34,7 @@ function App() {
       try {
         await sendEmailVerification(user);
         setError('Verification email sent! Please check your inbox.');
-      } catch (er) {
+      } catch (error) {
         setError('Failed to send verification email. Try again.');
       }
     }

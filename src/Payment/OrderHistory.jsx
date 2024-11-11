@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 
 const OrderHistory = () => {
@@ -46,3 +47,5 @@ const OrderHistory = () => {
 };
 
 export default OrderHistory;
+=======
+>>>>>>> c9ab2c116036a0cb6614e7eea8bf272ddcb5e8e2
