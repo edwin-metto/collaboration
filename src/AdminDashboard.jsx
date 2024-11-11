@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { db, auth } from './firebase';
 import { collection, getDocs, updateDoc, doc, query, where } from 'firebase/firestore';
-import { getUsers } from './firebase';
+import { getUsers } from './firebase'; 
 
 function AdminDashboard() {
     const [admined, setAdmined] = useState(false);
     const [orders, setOrders] = useState([]);
     const [users, setUsers] = useState([]);
+
     const [adminCredentials, setAdminCredentials] = useState({
         name: '',
         email: '',
@@ -61,12 +62,6 @@ function AdminDashboard() {
     };
 
 
-    const updateOrderStatus = async (orderId, status) => {
-        const orderRef = doc(db, 'orders', orderId);
-        await updateDoc(orderRef, { status });
-        setOrders(orders.map(order => order.id === orderId ? { ...order, status } : order));
-    };
-
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -74,49 +69,66 @@ function AdminDashboard() {
     };
 
     return (
-        <div className='text-black m-10'>
-            <div>
+        <div className="bg-gray-50 min-h-screen py-10 px-5">
+            <div className="max-w-4xl mx-auto p-5 bg-white shadow-xl rounded-xl">
                 {admined ? (
-                    <div className=''>
-                        <h1 >Admin Dashboard</h1>
-
-                        <div className='text-[20px] py-20'> Orders Made: {countFromLocalStorage} </div>
-                        <div className='p-20'></div>
+                    <div>
+                        <h1>Admin Dashboard</h1>
+                        <h1 className='text-black'> Orders Made: {countFromLocalStorage}</h1>
                     </div>
                 ) : (
-                    <div className='bg-gray-100 flex justify-center p-5 rounded-xl'>
-                        <form>
-                            <h2 className='font-bold m-2 text-[18px]'>Enter your admin details</h2>
-                            <input
-                                name="name"
-                                value={adminCredentials.name}
-                                onChange={handleInputChange}
-                                type="text"
-                                placeholder="Admin Name"
-                                required
-                            />
-                            <input
-                                name="email"
-                                value={adminCredentials.email}
-                                onChange={handleInputChange}
-                                type="email"
-                                placeholder="Email"
-                                required
-                            />
-                            <input
-                                name="pass"
-                                value={adminCredentials.pass}
-                                onChange={handleInputChange}
-                                type="password"
-                                placeholder="Password"
-                                required
-                            />
-                            <button onClick={checkAdmin}>Login</button>
+                    <div className="bg-gray-100 p-6 rounded-xl shadow-lg flex justify-center items-center">
+                        <form className="w-full max-w-md space-y-6">
+                            <h2 className="text-2xl font-bold text-center text-gray-700 mb-4">Enter Admin Details</h2>
+                            <div>
+                                <input
+                                    name="name"
+                                    value={adminCredentials.name}
+                                    onChange={handleInputChange}
+                                    type="text"
+                                    placeholder="Admin Name"
+                                    className="w-full p-3 bg-white rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <input
+                                    name="email"
+                                    value={adminCredentials.email}
+                                    onChange={handleInputChange}
+                                    type="email"
+                                    placeholder="Email"
+                                    className="w-full p-3 bg-white rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <input
+                                    name="pass"
+                                    value={adminCredentials.pass}
+                                    onChange={handleInputChange}
+                                    type="password"
+                                    placeholder="Password"
+                                    className="w-full p-3 bg-white rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    required
+                                />
+                            </div>
+                            <button
+                                onClick={checkAdmin}
+                                className="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-md"
+                            >
+                                Login
+                            </button>
                         </form>
                     </div>
                 )}
             </div>
-            {admined === null && <div><h2 className='text-red-500 text-[30px]'>Wrong Admin Details</h2></div>}
+
+            {admined === null && (
+                <div className="mt-6 text-center text-red-500 text-xl">
+                    <h2>Wrong Admin Details</h2>
+                </div>
+            )}
         </div>
     );
 }
