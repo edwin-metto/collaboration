@@ -143,7 +143,7 @@ function AdminDashboard() {
                                     onChange={handleInputChange}
                                     type="text"
                                     placeholder="Admin Name"
-                                    className="w-full p-3 bg-white rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    className="w-full p-3 bg-black rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                                     required
                                 />
                             </div>
@@ -154,7 +154,7 @@ function AdminDashboard() {
                                     onChange={handleInputChange}
                                     type="email"
                                     placeholder="Email"
-                                    className="w-full p-3 bg-white rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    className="w-full p-3 bg-black rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                                     required
                                 />
                             </div>
@@ -165,7 +165,7 @@ function AdminDashboard() {
                                     onChange={handleInputChange}
                                     type="password"
                                     placeholder="Password"
-                                    className="w-full p-3 bg-white rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    className="w-full p-3 bg-black rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                                     required
                                 />
                             </div>
