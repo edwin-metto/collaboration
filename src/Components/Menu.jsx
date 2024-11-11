@@ -1,6 +1,7 @@
 import React from 'react'
 import { images } from '../assets/Images/Images'
 
+
 function Menu() {
     const scrollCakes = () => {
         window.scrollTo({
@@ -71,6 +72,7 @@ function Menu() {
 
                 </div>
             </div>
+        
         </div>
     )
 }

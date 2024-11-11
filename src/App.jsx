@@ -6,6 +6,9 @@ import Home from './Components/Home';
 import { useState, useEffect } from 'react';
 import { onAuthStateChanged, sendEmailVerification } from 'firebase/auth';
 import { auth } from './firebase';
+import OrderHistory from './Payment/OrderHistory';
+
+
 
 
 function App() {
@@ -26,7 +29,7 @@ function App() {
   }, []);
 
 
-  const resendVerification = async () => {
+  const resendVerification = async () => {XS
     if (user && !user.emailVerified) {
       try {
         await sendEmailVerification(user);
@@ -51,10 +54,11 @@ function App() {
         )
       ) : (
         <Login />
-        
       )}
     </div>
   );
 }
+<div>
+</div>
 
 export default App;

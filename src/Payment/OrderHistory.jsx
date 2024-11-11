@@ -1,54 +1,48 @@
-import React, { useEffect, useState } from 'react';
-import { db, auth } from '../firebase';  
-import { collection, query, where, getDocs } from 'firebase/firestore';  
+import React, { useState, useEffect } from 'react';
 
-function OrderHistory() {
+const OrderHistory = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    const fetchOrders = async () => {
-      const user = auth.currentUser;
-      if (user) {
-        try {
-          const ordersQuery = query(
-            collection(db, 'users', user.uid, 'orders')  
-          );
-          const querySnapshot = await getDocs(ordersQuery);
-          const ordersData = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-          setOrders(ordersData);  
-        } catch (error) {
-          console.error('Error fetching orders: ', error);
-        }
-      }
+  
+    const fetchOrderHistory = async () => {
+      const response = await fetch('/api/orders'); 
+      const data = await response.json();
+      setOrders(data);
     };
 
-    fetchOrders();
+    fetchOrderHistory();
   }, []);
 
   return (
-    <div className="p-4">
-      <h2 className="text-2xl font-bold text-green-600">Your Order History</h2>
-      {orders.length === 0 ? (
-        <p>No orders found.</p>
-      ) : (
-        <ul>
-          {orders.map((order) => (
-            <li key={order.id} className="border p-2 my-2 rounded">
-              <p className="font-semibold">Order Date: {new Date(order.date.seconds * 1000).toLocaleDateString()}</p>
-              <p className="font-semibold">Total: ${order.totalPrice}</p>
-              <ul>
-                {order.items.map((item, index) => (
-                  <li key={index}>
-                    {item.name} (x{item.quantity}) - ${item.price * item.quantity}
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ))}
-        </ul>
-      )}
+    <div className="order-history">
+      <h2>Order History</h2>
+      <div className="order-list">
+        {orders.length === 0 ? (
+          <p>No orders yet.</p>
+        ) : (
+          orders.map((order) => (
+            <div key={order.id} className="order-item">
+              <h3>Order #{order.id}</h3>
+              <p><strong>Date:</strong> {new Date(order.date).toLocaleDateString()}</p>
+              <p><strong>Status:</strong> {order.status}</p>
+              <p><strong>Total:</strong> ${order.total}</p>
+              <div className="order-items">
+                <h4>Items:</h4>
+                <ul>
+                  {order.items.map((item) => (
+                    <li key={item.id}>
+                      {item.name} - {item.quantity} x ${item.price}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))
+        )}
+      </div>
     </div>
   );
-}
+};
 
 export default OrderHistory;

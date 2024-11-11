@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import OrderHistory from '../Payment/OrderHistory';
 
 function Carts() {
 
@@ -153,6 +154,7 @@ function Carts() {
               </>
             )}
           </div>
+          <OrderHistory/>
         </div>
       )}
     </div>
