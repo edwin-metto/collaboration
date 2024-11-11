@@ -5,6 +5,7 @@ import Banner from '../assets/Images/Banner'
 import AdminDashboard from '../AdminDashboard';
 import OrderHistory from '../Payment/OrderHistory';
 
+
 export const Context = React.createContext();
 
 function Home() {
@@ -40,7 +41,7 @@ function Home() {
 
                 <div>
 
-                    {History ? <OrderHistory /> : (<div>
+                    {History ? <OrderHistory/> : (<div>
 
                         {admin ? (
 
