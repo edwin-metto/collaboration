@@ -109,7 +109,7 @@ function AdminDashboard() {
                                     onChange={handleInputChange}
                                     type="password"
                                     placeholder="Password"
-                                    className="w-full p-3 bg-white rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    className="text-black w-full p-3 bg-white rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                                     required
                                 />
                             </div>
