@@ -77,61 +77,11 @@ function AdminDashboard() {
         <div className='text-black m-10'>
             <div>
                 {admined ? (
-                    <div>
-                        <h1>Admin Dashboard</h1>
+                    <div className=''>
+                        <h1 >Admin Dashboard</h1>
 
-                        <div> Orders: {countFromLocalStorage} </div>
-
-                        <div>
-                            <h2>Users</h2>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>User ID</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {users.map((user) => (
-                                        <tr key={user.uid}>
-                                            <td>{user.uid}</td>
-                                            <td>{user.displayName || 'N/A'}</td>
-                                            <td>{user.email}</td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
-
-
-                        <div>
-                            <h2>Orders</h2>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Order ID</th>
-                                        <th>User ID</th>
-                                        <th>Status</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {orders.map((order) => (
-                                        <tr key={order.id}>
-                                            <td>{order.id}</td>
-                                            <td>{order.userId}</td>
-                                            <td>{order.status}</td>
-                                            <td>
-                                                <button onClick={() => updateOrderStatus(order.id, 'preparing')}>Preparing</button>
-                                                <button onClick={() => updateOrderStatus(order.id, 'completed')}>Completed</button>
-                                                <button onClick={() => updateOrderStatus(order.id, 'canceled')}>Cancel</button>
-                                            </td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
+                        <div className='text-[20px] py-20'> Orders Made: {countFromLocalStorage} </div>
+                        <div className='p-20'></div>
                     </div>
                 ) : (
                     <div className='bg-gray-100 flex justify-center p-5 rounded-xl'>
